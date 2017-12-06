@@ -3,3 +3,5 @@ graft labextension/src
 graft nbextension/src
 include labextension/package.json
 include nbextension/package.json
+include LICENSE
+include README.md

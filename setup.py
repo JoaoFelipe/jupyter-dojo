@@ -10,10 +10,19 @@ CMDCLASS = create_cmdclass([
 CMDCLASS['labextension'] = install_npm('labextension')
 CMDCLASS['nbextension'] = install_npm('nbextension')
 
+try:
+    import pypandoc
+    LONG = pypandoc.convert('README.md', 'rst')
+except (IOError, ImportError):
+    LONG = "A JupyterLab and Jupyter Notebook extension for rendering unittest results."
+
+
 SETUP_ARGS = dict(
     name='jupyter_dojo',
-    version='0.1.0',
+    version='0.3.0',
     packages=['jupyter_dojo'],
+    description="A JupyterLab and Jupyter Notebook extension for rendering unittest results",
+    long_description=LONG,
     author='Joao Felipe Pimentel',
     author_email='joaofelipenp@gmail.com',
     url='https://github.com/JoaoFelipe/jupyter-dojo',
