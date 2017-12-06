@@ -1,0 +1,35 @@
+{
+  "name": "@jupyter_dojo/base",
+  "version": "0.1.2",
+  "description": "A base package to provide dojotools features",
+  "author": "Joao Felipe Pimentel <joaofelipenp@gmail.com>",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "jupyter",
+    "jupyterlab"
+  ],
+  "scripts": {
+    "build": "tsc --declaration",
+    "clean": "rimraf lib",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}"
+  ],
+  "dependencies": {
+    "push.js": "^1.0.5"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "~2.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo/issues"
+  },
+  "license": "MIT"
+}

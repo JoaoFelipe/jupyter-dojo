@@ -1,0 +1,44 @@
+{
+  "name": "@jupyter_dojo/nbextension",
+  "version": "0.1.0",
+  "description": "A Jupyter Notebook extension for rendering unittest",
+  "author": "Joao Felipe Pimentel <joaofelipenp@gmail.com>",
+  "main": "lib/index.js",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab extension"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "watch": "watch \"npm run build\" src --wait 10 --ignoreDotFiles",
+    "prepublish": "npm run build",
+    "extension:install": "jupyter nbextension install --symlink --py --sys-prefix notebook_json",
+    "extension:uninstall": "jupyter nbextension uninstall --py --sys-prefix notebook_json",
+    "extension:enable": "jupyter nbextension enable --py --sys-prefix notebook_json",
+    "extension:disable": "jupyter nbextension disable --py --sys-prefix notebook_json"
+  },
+  "dependencies": {
+    "@jupyter_dojo/base": "^0.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.34",
+    "@babel/preset-env": "^7.0.0-beta.34",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
+    "json-loader": "^0.5.7",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "watch": "^1.0.2",
+    "webpack": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo/issues"
+  },
+  "license": "MIT"
+}
