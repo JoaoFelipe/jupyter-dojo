@@ -5,3 +5,7 @@ include labextension/package.json
 include nbextension/package.json
 include LICENSE
 include README.md
+include setupbase.py
+recursive-include jupyter_dojo/static *.*
+include labextension/*.tgz
+include jupyter_dojo/*.tgz

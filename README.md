@@ -17,14 +17,12 @@ This project consists in a nbextension for Jupyter Notebooks and a labextension 
 If you want to install the *Jupyter Notebook* extension:
 ```bash
 pip install jupyter_dojo
-jupyter nbextension install --symlink --py --sys-prefix jupyter_dojo
 jupyter nbextension enable --py --sys-prefix jupyter_dojo
 ```
 
 If you want to install the *Jupyter Lab* extension:
 ```bash
 jupyter labextension install @jupyter_dojo/labextension
-jupyter lab build
 ```
 
 Note that Jupyter Lab extension API is not stable yet. Thus, it is very likely that future version will break this extension.

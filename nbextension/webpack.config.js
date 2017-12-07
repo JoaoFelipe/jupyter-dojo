@@ -1,5 +1,19 @@
+var fs = require('fs-extra');
 var path = require('path');
 var version = require('./package.json').version;
+
+// The static file directory.
+var staticDir = path.resolve(
+  __dirname,
+  '..',
+  'jupyter_dojo',
+  'static'
+)
+
+// Copy the package.json to static so we can inspect its version.
+fs.copySync('./package.json', path.join(staticDir, 'package.json'))
+
+
 
 /**
  * Custom webpack loaders are generally the same for all webpack bundles, hence
@@ -144,21 +158,8 @@ module.exports = [
     entry: path.join(__dirname, 'src', 'extension.js'),
     output: Object.assign({}, base.output, {
       filename: 'extension.js',
-      path: path.join(
-        __dirname,
-        '..',
-        'jupyter_dojo',
-        'static'
-      )
-    }),
-    externals: [
-      'nbextensions/jupyter_dojo/index',
-      'base/js/namespace',
-      'base/js/events',
-      'base/js/utils',
-      'notebook/js/codecell',
-      '$'
-    ]
+      path: staticDir
+    })
   }),
   /**
    * Bundle for the notebook containing the custom widget views and models
@@ -172,12 +173,7 @@ module.exports = [
     entry: path.join(__dirname, 'src', 'index.js'),
     output: Object.assign({}, base.output, {
       filename: 'index.js',
-      path: path.join(
-        __dirname,
-        '..',
-        'jupyter_dojo',
-        'static'
-      )
+      path: staticDir
     })
   }),
   /**
@@ -199,10 +195,10 @@ module.exports = [
     entry: './src/embed.js',
     output: Object.assign({}, base.output, {
       filename: 'index.js',
-      path: path.join(__dirname, 'embed'),
-      publicPath: 'https://unpkg.com/jupyter_dojo@' +
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: 'https://unpkg.com/@jupyter_dojo/nbextension@' +
         version +
-        '/lib/'
+        '/dist/'
     })
   })
 ];
