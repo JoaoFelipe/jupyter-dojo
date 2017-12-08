@@ -14,18 +14,27 @@ This project consists in a nbextension for Jupyter Notebooks and a labextension 
 
 ## How to Install
 
-If you want to install the *Jupyter Notebook* extension:
+If you use conda, it is possible to install the extensions by running:
+```bash
+conda install -c conda-forge jupyter_dojo
+```
+
+If you do not use conda, or if you want to get the most recent release at any given time (since conda-forge may take a while to update), use the following steps:
+
 ```bash
 pip install jupyter_dojo
 jupyter nbextension enable --py --sys-prefix jupyter_dojo
 ```
 
-If you want to install the *Jupyter Lab* extension:
+If have npm and Jupyter Lab, the next time you open it, it will ask if you want to rebuild jupyter lab with the extension.
+
+Alternatively, you can install the standalone toolbar in *Jupyter Lab* (without the notebook extension nor ipython-unittest) by running:
+
 ```bash
 jupyter labextension install @jupyter_dojo/labextension
 ```
 
-Note that Jupyter Lab extension API is not stable yet. Thus, it is very likely that future version will break this extension.
+Note that Jupyter Lab extension API is not stable yet. Thus, it is very likely that future versions will break this extension.
 
 ## Development
 
@@ -39,7 +48,13 @@ jupyter nbextension install --symlink --py --sys-prefix jupyter_dojo
 jupyter nbextension enable --py --sys-prefix jupyter_dojo
 ```
 
-Contact
+## Links
+
+- [IPython Unittest](https://github.com/JoaoFelipe/ipython-unittest)
+- [Pypi.org](https://pypi.org/project/jupyter-dojo/)
+- [Conda Forge Feedstock](https://github.com/conda-forge/jupyter_dojo-Feedstock)
+- [Standalone Conda Forge Recipe](https://github.com/conda-forge/staged-recipes/pull/4537)
+
 ----
 
 Do not hesitate to contact me:

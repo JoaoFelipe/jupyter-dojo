@@ -1,0 +1,49 @@
+{
+  "name": "@jupyter_dojo/labextension",
+  "version": "0.1.2",
+  "description": "Provide timer for coding dojo sessions and display test results",
+  "author": "Joao Felipe Pimentel",
+  "main": "dist/index.js",
+  "keywords": [
+    "jupyter",
+    "jupyterlab"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "pack": "tsc && npm pack"
+  },
+  "files": [
+    "dist/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/*.css"
+  ],
+  "jupyterlab": {
+    "extension": true
+  },
+  "dependencies": {
+    "@jupyter_dojo/base": "^0.1.2",
+    "@jupyterlab/application": "^0.13.1",
+    "@jupyterlab/apputils": "^0.13.1",
+    "@jupyterlab/cells": "^0.13.0",
+    "@jupyterlab/codemirror": "^0.13.0",
+    "@jupyterlab/docregistry": "^0.13.0",
+    "@jupyterlab/notebook": "^0.13.0",
+    "@jupyterlab/rendermime": "^0.13.0",
+    "@jupyterlab/rendermime-interfaces": "^0.4.3",
+    "@phosphor/disposable": "^1.1.2",
+    "@phosphor/widgets": "^1.5.0",
+    "@types/codemirror": "0.0.53"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoaoFelipe/jupyter-dojo/issues"
+  },
+  "license": "MIT"
+}

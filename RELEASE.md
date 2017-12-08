@@ -1,4 +1,4 @@
-# Making a jupyterlab_dojotools release
+# Making a Jupyter-Dojo release
 
 This document guides an extension maintainer through creating and publishing a release of jupyterlab_dojotools. This process creates a Python source package and a Python universal wheel and uploads them to PyPI.
 
@@ -21,7 +21,6 @@ git clean -xfd
 Build the Javascript extension bundle, then build the Python package and wheel:
 
 ```bash
-bash build.js
 python setup.py sdist
 python setup.py bdist_wheel --universal
 ```
